@@ -1,0 +1,462 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>MongoDB常用命令 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="MongoDB概念.html" />
+    
+    
+    <link rel="prev" href="../websocket.md" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    知识库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../java/">
+            
+                <a href="../../java/">
+            
+                    
+                    JAVA
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../java/SpringBoot+MybatisPlus集成.html">
+            
+                <a href="../../java/SpringBoot+MybatisPlus集成.html">
+            
+                    
+                    SpringBoot+MybatisPlus集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../java/websocket.html">
+            
+                <a href="../../java/websocket.html">
+            
+                    
+                    websocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    数据库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../websocket.md">
+            
+                <span>
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1.1" data-path="MongoDB常用命令.html">
+            
+                <a href="MongoDB常用命令.html">
+            
+                    
+                    MongoDB常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="MongoDB概念.html">
+            
+                <a href="MongoDB概念.html">
+            
+                    
+                    MongoDB概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >MongoDB常用命令</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>[toc]</p>
+<h1 id="&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;">&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;</h1>
+<p>&#x6807;&#x51C6; URI &#x8FDE;&#x63A5;&#x8BED;&#x6CD5;&#xFF1A;</p>
+<pre><code>mongodb://[username:password@]host1[:port1][,host2[:port2],...[,hostN[:portN]]][/[database][?options]]
+</code></pre><ul>
+<li>mongodb:// &#x8FD9;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#x683C;&#x5F0F;&#xFF0C;&#x5FC5;&#x987B;&#x8981;&#x6307;&#x5B9A;&#x3002;</li>
+<li></li>
+<li>username:password@ &#x53EF;&#x9009;&#x9879;&#xFF0C;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#xFF0C;&#x5728;&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#x670D;&#x52A1;&#x5668;&#x4E4B;&#x540E;&#xFF0C;&#x9A71;&#x52A8;&#x90FD;&#x4F1A;&#x5C1D;&#x8BD5;&#x767B;&#x5F55;&#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x5E93;</li>
+<li></li>
+<li>host1 &#x5FC5;&#x987B;&#x7684;&#x6307;&#x5B9A;&#x81F3;&#x5C11;&#x4E00;&#x4E2A;host, host1 &#x662F;&#x8FD9;&#x4E2A;URI&#x552F;&#x4E00;&#x8981;&#x586B;&#x5199;&#x7684;&#x3002;&#x5B83;&#x6307;&#x5B9A;&#x4E86;&#x8981;&#x8FDE;&#x63A5;&#x670D;&#x52A1;&#x5668;&#x7684;&#x5730;&#x5740;&#x3002;&#x5982;&#x679C;&#x8981;&#x8FDE;&#x63A5;&#x590D;&#x5236;&#x96C6;&#xFF0C;&#x8BF7;&#x6307;&#x5B9A;&#x591A;&#x4E2A;&#x4E3B;&#x673A;&#x5730;&#x5740;&#x3002;</li>
+<li></li>
+<li>portX &#x53EF;&#x9009;&#x7684;&#x6307;&#x5B9A;&#x7AEF;&#x53E3;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x586B;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;27017</li>
+<li></li>
+<li>/database &#x5982;&#x679C;&#x6307;&#x5B9A;username:password@&#xFF0C;&#x8FDE;&#x63A5;&#x5E76;&#x9A8C;&#x8BC1;&#x767B;&#x5F55;&#x6307;&#x5B9A;&#x6570;&#x636E;&#x5E93;&#x3002;&#x82E5;&#x4E0D;&#x6307;&#x5B9A;&#xFF0C;&#x9ED8;&#x8BA4;&#x6253;&#x5F00; test &#x6570;&#x636E;&#x5E93;&#x3002;</li>
+<li></li>
+<li>?options &#x662F;&#x8FDE;&#x63A5;&#x9009;&#x9879;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x4F7F;&#x7528;/database&#xFF0C;&#x5219;&#x524D;&#x9762;&#x9700;&#x8981;&#x52A0;&#x4E0A;/&#x3002;&#x6240;&#x6709;&#x8FDE;&#x63A5;&#x9009;&#x9879;&#x90FD;&#x662F;&#x952E;&#x503C;&#x5BF9;name=value&#xFF0C;&#x952E;&#x503C;&#x5BF9;&#x4E4B;&#x95F4;&#x901A;&#x8FC7;&amp;&#x6216;;&#xFF08;&#x5206;&#x53F7;&#xFF09;&#x9694;&#x5F00;</li>
+</ul>
+<h1 id="&#x547D;&#x4EE4;&#x64CD;&#x4F5C;">&#x547D;&#x4EE4;&#x64CD;&#x4F5C;</h1>
+<h2 id="&#x6570;&#x636E;&#x5E93;&#x64CD;&#x4F5C;">&#x6570;&#x636E;&#x5E93;&#x64CD;&#x4F5C;</h2>
+<pre><code>//&#x663E;&#x793A;&#x6240;&#x6709;&#x6570;&#x636E;&#x5E93;
+show dbs
+
+//&#x663E;&#x793A;&#x5F53;&#x524D;&#x6570;&#x636E;&#x5E93;
+db
+
+//&#x5207;&#x6362;&#x5230;test&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x5219;&#x521B;&#x5EFA;&#xFF0C;&#x521B;&#x5EFA;&#x540E;&#x9700;&#x8981;&#x63D2;&#x5165;&#x6570;&#x636E;&#xFF0C;&#x624D;&#x80FD;show dbs&#x4E2D;&#x663E;&#x793A;
+use test
+
+//&#x5220;&#x9664;&#x6570;&#x636E;&#x5E93;
+db.dropDatabase()
+</code></pre><h2 id="&#x96C6;&#x5408;&#x64CD;&#x4F5C;">&#x96C6;&#x5408;&#x64CD;&#x4F5C;</h2>
+<pre><code>//&#x67E5;&#x770B;&#x5F53;&#x524D;&#x6570;&#x636E;&#x5E93;&#x7684;&#x96C6;&#x5408;
+show collections
+
+//&#x521B;&#x5EFA;&#x96C6;&#x5408;
+db.createCollection(name, options)
+//eg &#x521B;&#x5EFA;&#x56FA;&#x5B9A;&#x96C6;&#x5408; mycol&#xFF0C;&#x6574;&#x4E2A;&#x96C6;&#x5408;&#x7A7A;&#x95F4;&#x5927;&#x5C0F; 6142800 KB, &#x6587;&#x6863;&#x6700;&#x5927;&#x4E2A;&#x6570;&#x4E3A; 10000 &#x4E2A;&#x3002;
+db.createCollection(&quot;mycol&quot;, { capped : true, autoIndexId : true, size : 6142800, max : 10000 } )
+
+//&#x5220;&#x9664;&#x96C6;&#x5408;
+db.collection.drop()
+//eg &#x5220;&#x9664;&#x96C6;&#x5408;[mycol2]
+db.mycol2.drop()
+</code></pre><h2 id="&#x6587;&#x6863;&#x64CD;&#x4F5C;">&#x6587;&#x6863;&#x64CD;&#x4F5C;</h2>
+<h3 id="&#x6DFB;&#x52A0;">&#x6DFB;&#x52A0;</h3>
+<pre><code>//&#x6DFB;&#x52A0;&#x6587;&#x6863;
+db.COLLECTION_NAME.insert(document)
+
+//eg &#x4EE5;&#x4E0B;&#x6587;&#x6863;&#x53EF;&#x4EE5;&#x5B58;&#x50A8;&#x5728; MongoDB &#x7684; runoob &#x6570;&#x636E;&#x5E93; &#x7684; col &#x96C6;&#x5408;&#x4E2D;&#xFF1A;
+db.col.insert({title: &apos;MongoDB &#x6559;&#x7A0B;&apos;, 
+    description: &apos;MongoDB &#x662F;&#x4E00;&#x4E2A; Nosql &#x6570;&#x636E;&#x5E93;&apos;,
+    by: &apos;&#x83DC;&#x9E1F;&#x6559;&#x7A0B;&apos;,
+    url: &apos;http://www.runoob.com&apos;,
+    tags: [&apos;mongodb&apos;, &apos;database&apos;, &apos;NoSQL&apos;],
+    likes: 100
+})
+
+db.collection.insertOne():&#x5411;&#x6307;&#x5B9A;&#x96C6;&#x5408;&#x4E2D;&#x63D2;&#x5165;&#x4E00;&#x6761;&#x6587;&#x6863;&#x6570;&#x636E;
+db.collection.insertMany():&#x5411;&#x6307;&#x5B9A;&#x96C6;&#x5408;&#x4E2D;&#x63D2;&#x5165;&#x591A;&#x6761;&#x6587;&#x6863;&#x6570;&#x636E;
+
+#  &#x63D2;&#x5165;&#x5355;&#x6761;&#x6570;&#x636E;
+
+&gt; var document = db.collection.insertOne({&quot;a&quot;: 3})
+&gt; document
+{
+        &quot;acknowledged&quot; : true,
+        &quot;insertedId&quot; : ObjectId(&quot;571a218011a82a1d94c02333&quot;)
+}
+
+#  &#x63D2;&#x5165;&#x591A;&#x6761;&#x6570;&#x636E;
+&gt; var res = db.collection.insertMany([{&quot;b&quot;: 3}, {&apos;c&apos;: 4}])
+&gt; res
+{
+        &quot;acknowledged&quot; : true,
+        &quot;insertedIds&quot; : [
+                ObjectId(&quot;571a22a911a82a1d94c02337&quot;),
+                ObjectId(&quot;571a22a911a82a1d94c02338&quot;)
+        ]
+}
+</code></pre><h3 id="&#x66F4;&#x65B0;">&#x66F4;&#x65B0;</h3>
+<pre><code>db.col.update({&apos;title&apos;:&apos;MongoDB &#x6559;&#x7A0B;&apos;},{$set:{&apos;title&apos;:&apos;MongoDB&apos;}})
+
+
+//&#x53EA;&#x66F4;&#x65B0;&#x7B2C;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#xFF1A;
+db.col.update( { &quot;count&quot; : { $gt : 1 } } , { $set : { &quot;test2&quot; : &quot;OK&quot;} } );
+
+//&#x5168;&#x90E8;&#x66F4;&#x65B0;&#xFF1A;
+db.col.update( { &quot;count&quot; : { $gt : 3 } } , { $set : { &quot;test2&quot; : &quot;OK&quot;} },false,true );
+
+//&#x53EA;&#x6DFB;&#x52A0;&#x7B2C;&#x4E00;&#x6761;&#xFF1A;
+db.col.update( { &quot;count&quot; : { $gt : 4 } } , { $set : { &quot;test5&quot; : &quot;OK&quot;} },true,false );
+
+//&#x5168;&#x90E8;&#x6DFB;&#x52A0;&#x8FDB;&#x53BB;:
+db.col.update( { &quot;count&quot; : { $gt : 5 } } , { $set : { &quot;test5&quot; : &quot;OK&quot;} },true,true );
+
+//&#x5168;&#x90E8;&#x66F4;&#x65B0;&#xFF1A;
+db.col.update( { &quot;count&quot; : { $gt : 15 } } , { $inc : { &quot;count&quot; : 1} },false,true );
+
+//&#x53EA;&#x66F4;&#x65B0;&#x7B2C;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#xFF1A;
+db.col.update( { &quot;count&quot; : { $gt : 10 } } , { $inc : { &quot;count&quot; : 1} },false,false );
+</code></pre><h3 id="&#x5220;&#x9664;">&#x5220;&#x9664;</h3>
+<pre><code>db.col.remove({&apos;title&apos;:&apos;MongoDB &#x6559;&#x7A0B;&apos;})
+
+//&#x5220;&#x9664;&#x7B2C;&#x4E00;&#x6761;&#x627E;&#x5230;&#x7684;&#x8BB0;&#x5F55;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E; justOne &#x4E3A; 1
+db.COLLECTION_NAME.remove(DELETION_CRITERIA,1)
+
+//&#x5220;&#x9664;&#x6240;&#x6709;&#x6570;&#x636E;
+db.col.remove({})
+</code></pre><h3 id="&#x67E5;&#x8BE2;">&#x67E5;&#x8BE2;</h3>
+<pre><code>//&#x4EE5;&#x6613;&#x8BFB;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x8BFB;&#x53D6;&#x6570;&#x636E;
+db.col.find().pretty()
+
+//&#x591A;&#x6761;&#x4EF6;&#x67E5;&#x8BE2; &#xFF08;and&#xFF09;
+db.col.find({&quot;by&quot;:&quot;&#x83DC;&#x9E1F;&#x6559;&#x7A0B;&quot;, &quot;title&quot;:&quot;MongoDB &#x6559;&#x7A0B;&quot;}).pretty()
+
+//&#x591A;&#x6761;&#x4EF6;&#x67E5;&#x8BE2; &#xFF08;or&#xFF09;
+db.col.find({$or:[{&quot;by&quot;:&quot;&#x83DC;&#x9E1F;&#x6559;&#x7A0B;&quot;},{&quot;title&quot;: &quot;MongoDB &#x6559;&#x7A0B;&quot;}]}).pretty()
+
+//&#x591A;&#x6761;&#x4EF6;&#x67E5;&#x8BE2; &#xFF08;and &#x548C; or&#xFF09;
+db.col.find({&quot;likes&quot;: {$gt:50}, $or: [{&quot;by&quot;: &quot;&#x83DC;&#x9E1F;&#x6559;&#x7A0B;&quot;},{&quot;title&quot;: &quot;MongoDB &#x6559;&#x7A0B;&quot;}]}).pretty()
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../websocket.md" class="navigation navigation-prev " aria-label="Previous page: MongoDB">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="MongoDB概念.html" class="navigation navigation-next " aria-label="Next page: MongoDB概念">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"MongoDB常用命令","level":"1.3.1.1","depth":3,"next":{"title":"MongoDB概念","level":"1.3.1.2","depth":3,"path":"database/MongoDB/MongoDB概念.md","ref":"database/MongoDB/MongoDB概念.md","articles":[]},"previous":{"title":"MongoDB","level":"1.3.1","depth":2,"path":"database/websocket.md","ref":"database/websocket.md","articles":[{"title":"MongoDB常用命令","level":"1.3.1.1","depth":3,"path":"database/MongoDB/MongoDB常用命令.md","ref":"database/MongoDB/MongoDB常用命令.md","articles":[]},{"title":"MongoDB概念","level":"1.3.1.2","depth":3,"path":"database/MongoDB/MongoDB概念.md","ref":"database/MongoDB/MongoDB概念.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"database/MongoDB/MongoDB常用命令.md","mtime":"2021-03-29T02:31:47.367Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-29T02:45:20.216Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
