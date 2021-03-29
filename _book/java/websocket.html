@@ -1,0 +1,512 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>websocket · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../database/" />
+    
+    
+    <link rel="prev" href="SpringBoot+MybatisPlus集成.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    知识库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    JAVA
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="SpringBoot+MybatisPlus集成.html">
+            
+                <a href="SpringBoot+MybatisPlus集成.html">
+            
+                    
+                    SpringBoot+MybatisPlus集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="websocket.html">
+            
+                <a href="websocket.html">
+            
+                    
+                    websocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../database/">
+            
+                <a href="../database/">
+            
+                    
+                    数据库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../database/websocket.md">
+            
+                <span>
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../database/MongoDB/MongoDB常用命令.html">
+            
+                <a href="../database/MongoDB/MongoDB常用命令.html">
+            
+                    
+                    MongoDB常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../database/MongoDB/MongoDB概念.html">
+            
+                <a href="../database/MongoDB/MongoDB概念.html">
+            
+                    
+                    MongoDB概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >websocket</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="&#x6982;&#x5FF5;">&#x6982;&#x5FF5;</h3>
+<p>WebSocket&#x534F;&#x8BAE;&#x662F;&#x57FA;&#x4E8E;TCP&#x7684;&#x4E00;&#x79CD;&#x65B0;&#x7684;&#x7F51;&#x7EDC;&#x534F;&#x8BAE;&#x3002;&#x5B83;&#x5B9E;&#x73B0;&#x4E86;&#x6D4F;&#x89C8;&#x5668;&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x5168;&#x53CC;&#x5DE5;(full-duplex)&#x901A;&#x4FE1;&#x2014;&#x2014;&#x5141;&#x8BB8;&#x670D;&#x52A1;&#x5668;&#x4E3B;&#x52A8;&#x53D1;&#x9001;&#x4FE1;&#x606F;&#x7ED9;&#x5BA2;&#x6237;&#x7AEF;&#x3002;</p>
+<h3 id="&#x57FA;&#x7840;&#x73AF;&#x5883;">&#x57FA;&#x7840;&#x73AF;&#x5883;</h3>
+<p>&#x5FEB;&#x901F;&#x642D;&#x5EFA;Spring&#x6846;&#x67B6;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;Spring boot&#xFF0C;&#x8FD9;&#x91CC;&#x5148;&#x4E0D;&#x8BA8;&#x8BBA;SpringBoot&#xFF0C;&#x53EA;&#x77E5;&#x9053;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x201C;&#x5FEB;&#x901F;&#x642D;&#x5EFA;Spring&#x9879;&#x76EE;&#x7684;&#x4E00;&#x7AD9;&#x5F0F;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x201D;&#x5C31;OK&#x4E86;&#x3002;
+&#x8981;&#x4F7F;&#x7528;Spring&#x7684;WebSocket&#x529F;&#x80FD;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x4F9D;&#x8D56;&#xFF1A;</p>
+<pre><code>&lt;dependency&gt;    
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;    
+        &lt;artifactId&gt;spring-boot-starter-websocket&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre><h3 id="&#x76F8;&#x5173;&#x914D;&#x7F6E;">&#x76F8;&#x5173;&#x914D;&#x7F6E;</h3>
+<pre><code>@Configuration
+@EnableWebSocketMessageBroker
+public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {    
+    @Override    
+    public void registerStompEndpoints(StompEndpointRegistry registry) {        
+        registry.addEndpoint(&quot;/socket&quot;).withSockJS();       
+    }    
+    @Override    
+    public void configureMessageBroker(MessageBrokerRegistry registry) {  
+        registry.enableSimpleBroker(&quot;/topic&quot;);      
+        registry.setApplicationDestinationPrefixes(&quot;/app&quot;); 
+    }
+}
+</code></pre><blockquote>
+<p>&#x76F8;&#x5173;&#x8BF4;&#x660E;&#xFF1A;</p>
+<ul>
+<li><code>registerStompEndpoints(StompEndpointRegistry registry)</code><br>&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x7AEF;&#x70B9;&#xFF0C;&#x6765;&#x63A5;&#x6536;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x8FDE;&#x63A5;&#x3002;</li>
+<li><code>registry.addEndpoint(&quot;/socket&quot;)</code><br>&#x8868;&#x793A;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;/socket&#x7AEF;&#x70B9;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x7AEF;&#x70B9;&#x6765;&#x8FDB;&#x884C;&#x8FDE;&#x63A5;&#x3002;</li>
+<li><code>registry.enableSimpleBroker(&quot;/topic&quot;)</code><br>&#x8868;&#x793A;&#x5BA2;&#x6237;&#x7AEF;&#x8BA2;&#x9605;&#x5730;&#x5740;&#x7684;&#x524D;&#x7F00;&#x4FE1;&#x606F;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5BA2;&#x6237;&#x7AEF;&#x63A5;&#x6536;&#x670D;&#x52A1;&#x7AEF;&#x6D88;&#x606F;&#x7684;&#x5730;&#x5740;&#x7684;&#x524D;&#x7F00;&#x4FE1;&#x606F;&#xFF08;&#x6BD4;&#x8F83;&#x7ED5;&#xFF0C;&#x770B;&#x5B8C;&#x6574;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x5927;&#x6982;&#x5C31;&#x80FD;&#x660E;&#x767D;&#x4E86;&#xFF09;</li>
+<li>registry.setApplicationDestinationPrefixes(&quot;/app&quot;)<br>&#x6307;&#x670D;&#x52A1;&#x7AEF;&#x63A5;&#x6536;&#x5730;&#x5740;&#x7684;&#x524D;&#x7F00;&#xFF0C;&#x610F;&#x601D;&#x5C31;&#x662F;&#x8BF4;&#x5BA2;&#x6237;&#x7AEF;&#x7ED9;&#x670D;&#x52A1;&#x7AEF;&#x53D1;&#x6D88;&#x606F;&#x7684;&#x5730;&#x5740;&#x7684;&#x524D;&#x7F00;</li>
+</ul>
+</blockquote>
+<h3 id="&#x7F16;&#x5199;&#x540E;&#x53F0;&#x4E1A;&#x52A1;">&#x7F16;&#x5199;&#x540E;&#x53F0;&#x4E1A;&#x52A1;</h3>
+<ul>
+<li><p>MessageMapping<br>Spring&#x5BF9;&#x4E8E;WebSocket&#x5C01;&#x88C5;&#x7684;&#x7279;&#x522B;&#x7B80;&#x5355;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;@MessageMapping&#x6CE8;&#x89E3;&#xFF0C;&#x529F;&#x80FD;&#x7C7B;&#x4F3C;@RequestMapping&#xFF0C;&#x5B83;&#x662F;&#x5B58;&#x5728;&#x4E8E;Controller&#x4E2D;&#x7684;&#xFF0C;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#x7684;&#x57FA;&#x672C;&#x8BF7;&#x6C42;&#xFF0C;&#x529F;&#x80FD;&#x4E5F;&#x8DDF;@RequestMapping&#x7C7B;&#x4F3C;&#xFF0C;&#x5305;&#x62EC;&#x652F;&#x6301;&#x901A;&#x914D;&#x7B26;``&#x7684;url&#x5B9A;&#x4E49;&#x7B49;&#x7B49;&#xFF0C;&#x8BE6;&#x7EC6;&#x7528;&#x6CD5;&#x53C2;&#x89C1;Annotation Message Handling</p>
+</li>
+<li><p>SimpMessagingTemplate<br>SimpMessagingTemplate&#x662F;Spring-WebSocket&#x5185;&#x7F6E;&#x7684;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#x53D1;&#x9001;&#x5DE5;&#x5177;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x6D88;&#x606F;&#x53D1;&#x9001;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x3002;
+```
+@Controller
+public class GreetingController {<br>  @Resource
+  private SimpMessagingTemplate simpMessagingTemplate;<br>  @RequestMapping(&quot;/helloSocket&quot;)<br>  public String index(){        </p>
+<pre><code>  return &quot;/hello/index&quot;;    
+</code></pre><p>  }<br>  @MessageMapping(&quot;/change-notice&quot;)<br>  public void greeting(String value){</p>
+<pre><code>  this.simpMessagingTemplate.convertAndSend(&quot;/topic/notice&quot;, value);    
+</code></pre><p>  }
+}</p>
+</li>
+</ul>
+<pre><code>
+1. index()
+&#x6307;&#x5B9A;&#x4E86;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#xFF0C;&#x7528;&#x6765;&#x5B9E;&#x73B0;WebSocket&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x516C;&#x544A;&#x529F;&#x80FD;&#xFF0C;&#x4F7F;&#x7528;&#x7684;&#x662F;@RequestMapping&#xFF0C;&#x6240;&#x4EE5;&#x63A5;&#x6536;&#x7684;&#x662F;http&#x8BF7;&#x6C42;&#xFF0C;&#x8FDB;&#x884C;&#x9875;&#x9762;&#x8DF3;&#x8F6C;&#x3002;
+2. greeting(String value)
+&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x662F;&#x63A5;&#x6536;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x529F;&#x516C;&#x544A;&#x7684;WebSocket&#x8BF7;&#x6C42;&#xFF0C;&#x4F7F;&#x7528;&#x7684;&#x662F;@MessageMapping&#x3002;
+
+3. this.simpMessagingTemplate.convertAndSend(&quot;/topic/notice&quot;, value)
+&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5B98;&#x65B9;&#x7ED9;&#x51FA;&#x7684;&#x89E3;&#x91CA;&#x662F;Convert the given Object to serialized form, possibly using a MessageConverter, wrap it as a message and send it to the given destination. &#x610F;&#x601D;&#x5C31;&#x662F;&#x201C;&#x5C06;&#x7ED9;&#x5B9A;&#x7684;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x5E8F;&#x5217;&#x5316;&#xFF0C;&#x4F7F;&#x7528;&#x2018;MessageConverter&#x2019;&#x8FDB;&#x884C;&#x5305;&#x88C5;&#x8F6C;&#x5316;&#x6210;&#x4E00;&#x6761;&#x6D88;&#x606F;&#xFF0C;&#x53D1;&#x9001;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x76EE;&#x6807;&#x201D;&#xFF0C;&#x901A;&#x4FD7;&#x70B9;&#x8BB2;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x6D88;&#x606F;&#x7684;&#x8F6C;&#x53D1;&#x53D1;&#x9001;&#xFF01;
+
+
+&#x524D;&#x9762;&#x6211;&#x4EEC;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x4E2D;&#x6307;&#x5B9A;&#x4E86;&#x670D;&#x52A1;&#x7AEF;&#x63A5;&#x6536;&#x7684;&#x8FDE;&#x63A5;&#x4EE5; app&#x5927;&#x5934;&#xFF0C;&#x6240;&#x4EE5;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x516C;&#x544A;&#x7684;&#x8BF7;&#x6C42;&#x8FDE;&#x63A5;&#x5E94;&#x8BE5;&#x662F;/app/change-notice&#x3002;
+&#x670D;&#x52A1;&#x7AEF;&#x4EE3;&#x7801;&#x5C31;&#x8FD9;&#x4E48;&#x7B80;&#x5355;&#xFF0C;&#x8DDF;&#x5199;SpringMVC&#x7C7B;&#x4F3C;&#xFF0C;&#x540C;&#x6837;&#x4E0A;&#x9762;&#x7684;geeting(String value)&#x65B9;&#x6CD5;&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x53E6;&#x4E00;&#x4E2A;&#x6CE8;&#x89E3;@SendTo&#x6362;&#x6210;&#x53E6;&#x4E00;&#x79CD;&#x5199;&#x6CD5;&#x3002;
+</code></pre><p>@MessageMapping(&quot;/change-notice&quot;)
+@SendTo(&quot;/topic/notice&quot;)
+public String greeting(String value) {<br>    return value;
+}</p>
+<pre><code>
+- @SendTo&#x5B9A;&#x4E49;&#x4E86;&#x6D88;&#x606F;&#x7684;&#x76EE;&#x7684;&#x5730;&#x3002;&#x7ED3;&#x5408;&#x4F8B;&#x5B50;&#x89E3;&#x91CA;&#x5C31;&#x662F;&#x201C;&#x63A5;&#x6536;/app/change-notice&#x53D1;&#x6765;&#x7684;value&#xFF0C;&#x7136;&#x540E;&#x5C06;value&#x8F6C;&#x53D1;&#x5230;/topic/notice&#x5BA2;&#x6237;&#x7AEF;&#x3002;
+
+- /topic/notice&#x662F;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x8D77;&#x8FDE;&#x63A5;&#x540E;&#xFF0C;&#x8BA2;&#x9605;&#x670D;&#x52A1;&#x7AEF;&#x6D88;&#x606F;&#x65F6;&#x6307;&#x5B9A;&#x7684;&#x4E00;&#x4E2A;&#x5730;&#x5740;&#xFF0C;&#x7528;&#x4E8E;&#x63A5;&#x6536;&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x8FD4;&#x56DE;&#xFF0C;&#x540E;&#x9762;&#x6211;&#x4EEC;&#x5728;&#x5199;&#x5BA2;&#x6237;&#x7AEF;&#x4EE3;&#x7801;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x770B;&#x89C1;&#x3002;
+
+
+### &#x524D;&#x7AEF;
+
+- SockJS&#xFF1A;  
+SockJS &#x662F;&#x4E00;&#x4E2A;&#x6D4F;&#x89C8;&#x5668;&#x4E0A;&#x8FD0;&#x884C;&#x7684; JavaScript &#x5E93;&#xFF0C;&#x5982;&#x679C;&#x6D4F;&#x89C8;&#x5668;&#x4E0D;&#x652F;&#x6301; WebSocket&#xFF0C;&#x8BE5;&#x5E93;&#x53EF;&#x4EE5;&#x6A21;&#x62DF;&#x5BF9; WebSocket &#x7684;&#x652F;&#x6301;&#xFF0C;&#x5B9E;&#x73B0;&#x6D4F;&#x89C8;&#x5668;&#x548C; Web &#x670D;&#x52A1;&#x5668;&#x4E4B;&#x95F4;&#x4F4E;&#x5EF6;&#x8FDF;&#x3001;&#x5168;&#x53CC;&#x5DE5;&#x3001;&#x8DE8;&#x57DF;&#x7684;&#x901A;&#x8BAF;&#x901A;&#x9053;&#x3002;
+
+- Stomp  
+Stomp &#x63D0;&#x4F9B;&#x4E86;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x4EE3;&#x7406;&#x4E4B;&#x95F4;&#x8FDB;&#x884C;&#x5E7F;&#x6CDB;&#x6D88;&#x606F;&#x4F20;&#x8F93;&#x7684;&#x6846;&#x67B6;&#x3002;Stomp &#x662F;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x7B80;&#x5355;&#x800C;&#x4E14;&#x6613;&#x7528;&#x7684;&#x901A;&#x8BAF;&#x534F;&#x8BAE;&#x5B9E;&#x73B0;&#xFF0C;&#x5C3D;&#x7BA1;&#x4EE3;&#x7406;&#x7AEF;&#x7684;&#x7F16;&#x5199;&#x53EF;&#x80FD;&#x975E;&#x5E38;&#x590D;&#x6742;&#xFF0C;&#x4F46;&#x662F;&#x7F16;&#x5199;&#x4E00;&#x4E2A; Stomp &#x5BA2;&#x6237;&#x7AEF;&#x5374;&#x662F;&#x5F88;&#x7B80;&#x5355;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x53E6;&#x5916;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; Telnet &#x6765;&#x4E0E;&#x4F60;&#x7684; Stomp &#x4EE3;&#x7406;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x3002;
+</code></pre><div>    
+    <div>        
+        <button id="connect" onclick="connect();">Connect</button> 
+       <button id="disconnect" disabled="disabled" onclick="disconnect();">Disconnect</button>    
+    </div>    
+    <div id="conversationDiv">        
+        <p>            
+            <label>notice content?</label>        
+        </p>        
+        <p>            
+              <textarea id="name" rows="5"></textarea>        
+        </p>        
+        <button id="sendName" onclick="sendName();">Send</button>        
+        <p id="response"></p>    
+    </div>
+</div>
+
+
+<script src="/js/sockjs-0.3.4.min.js"></script>
+<script src="/js/stomp.min.js"></script>
+<script>    
+    var stompClient = null;    
+    function setConnected(connected) {        
+        document.getElementById('connect').disabled = connected;        
+        document.getElementById('disconnect').disabled = !connected;        
+        document.getElementById('conversationDiv').style.visibility = connected ? 'visible' : 'hidden';        
+        document.getElementById('response').innerHTML = '';    
+    }    
+    // 开启socket连接
+    function connect() {        
+        var socket = new SockJS('/socket');        
+        stompClient = Stomp.over(socket);        
+        stompClient.connect({}, function (frame) {            
+             setConnected(true);            
+        });    
+    }    
+    // 断开socket连接
+    function disconnect() {        
+        if (stompClient != null) {            
+            stompClient.disconnect();        
+        }        
+        setConnected(false);        
+        console.log("Disconnected");    
+    }    
+    // 向‘/app/change-notice’服务端发送消息
+    function sendName() {        
+        var value = document.getElementById('name').value;            
+        stompClient.send("/app/change-notice", {}, value);    
+    }    
+    connect();
+</script>
+
+<pre><code>
+### &#x5F00;&#x542F;Socket
+</code></pre><p>var socket = new SockJS(&apos;/socket&apos;); &#x5148;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;SockJS&#x5BF9;&#x8C61;</p>
+<p>stompClient = Stomp.over(socket); &#x7528;Stomp&#x5C06;SockJS&#x8FDB;&#x884C;&#x534F;&#x8BAE;&#x5C01;&#x88C5;</p>
+<p>stompClient.connect() &#x4E0E;&#x670D;&#x52A1;&#x7AEF;&#x8FDB;&#x884C;&#x8FDE;&#x63A5;&#xFF0C;&#x540C;&#x65F6;&#x6709;&#x4E00;&#x4E2A;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x5904;&#x7406;&#x8FDE;&#x63A5;&#x6210;&#x529F;&#x540E;&#x7684;&#x64CD;&#x4F5C;&#x4FE1;&#x606F;&#x3002;</p>
+<p>stompClient.send(&quot;/app/change-notice&quot;, {}, value);
+&#x53D1;&#x9001;&#x6D88;&#x606F;</p>
+<pre><code>```
+&#x8BA2;&#x9605;&#xFF08;&#x76D1;&#x542C;&#xFF09;
+
+var noticeSocket = function () {    
+  var s = new SockJS(&apos;/socket&apos;);    
+  var stompClient = Stomp.over(s);    
+  stompClient.connect({}, function () {         
+    console.log(&apos;notice socket connected!&apos;);
+    stompClient.subscribe(&apos;/topic/notice&apos;, function (data) {            
+      $(&apos;.message span.content&apos;).html(data.body);        
+    });    
+ });
+};
+</code></pre><blockquote>
+<p>&#x76F8;&#x5173;&#x8BF4;&#x660E;&#xFF1A;
+&#x8FD9;&#x91CC;&#x4E0E;&#x53D1;&#x9001;&#x516C;&#x544A;&#x4EE3;&#x7801;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x5728;stompClient&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#x6210;&#x529F;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x76D1;&#x542C;&#x670D;&#x52A1;&#x7AEF;&#x53D1;&#x9001;&#x8FC7;&#x6765;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x63A5;&#x6536;&#x5230;&#x4E4B;&#x540E;&#xFF0C;&#x6539;&#x53D8;&#x9875;&#x9762;&#x4E0A;&#x516C;&#x544A;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x6240;&#x4EE5;&#x7528;&#x5230;&#x4E86;stompClient.subscribe()
+&#x8FD9;&#x4E2A;subscribe()&#x65B9;&#x6CD5;&#x529F;&#x80FD;&#x5C31;&#x662F;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x8BA2;&#x9605;&#x5730;&#x5740;&#xFF0C;&#x7528;&#x6765;&#x63A5;&#x6536;&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x4FE1;&#x606F;&#xFF08;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5728;@SendTo&#x4E2D;&#x6307;&#x5B9A;&#x4E86;&#x8FD9;&#x4E2A;&#x8BA2;&#x9605;&#x5730;&#x5740;&#x201C;/topic/notice&#x201D;&#xFF09;&#xFF0C;&#x5F53;&#x6536;&#x5230;&#x6D88;&#x606F;&#x540E;&#xFF0C;&#x5728;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4E2D;&#x5904;&#x7406;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x3002;</p>
+</blockquote>
+<h3 id="nginx">nginx</h3>
+<pre><code>location ^~ /socket {
+        # proxy_pass http://dockerhost:8089;
+        proxy_pass http://websocket;
+        # proxy_pass http://145.170.23.128:8089;
+        proxy_http_version 1.1; 
+        proxy_set_header Upgrade $http_upgrade; 
+        proxy_set_header Connection &quot;upgrade&quot;;
+        proxy_set_header Origin &quot;&quot;;
+        # proxy_set_header Connection $connection_upgrade;
+      }
+</code></pre><h3 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h3>
+<p><a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#websocket" target="_blank">spring &#x5B98;&#x7F51;</a></p>
+<p><a href="https://www.jianshu.com/p/60799f1356c5" target="_blank">&#x7B80;&#x4E66;&#x6559;&#x7A0B;-&#x540E;&#x7AEF;</a></p>
+<p><a href="https://www.jianshu.com/p/8500ad65eb50" target="_blank">&#x7B80;&#x4E66;&#x6559;&#x7A0B;-&#x524D;&#x7AEF;</a></p>
+<p><a href="https://github.com/myitroad/spring-in-action-4/tree/master/Chapter_18" target="_blank">GitHub</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="SpringBoot+MybatisPlus集成.html" class="navigation navigation-prev " aria-label="Previous page: SpringBoot+MybatisPlus集成">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../database/" class="navigation navigation-next " aria-label="Next page: 数据库">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"websocket","level":"1.2.2","depth":2,"next":{"title":"数据库","level":"1.3","depth":1,"path":"database/README.md","ref":"database/README.md","articles":[{"title":"MongoDB","level":"1.3.1","depth":2,"path":"database/websocket.md","ref":"database/websocket.md","articles":[{"title":"MongoDB常用命令","level":"1.3.1.1","depth":3,"path":"database/MongoDB/MongoDB常用命令.md","ref":"database/MongoDB/MongoDB常用命令.md","articles":[]},{"title":"MongoDB概念","level":"1.3.1.2","depth":3,"path":"database/MongoDB/MongoDB概念.md","ref":"database/MongoDB/MongoDB概念.md","articles":[]}]}]},"previous":{"title":"SpringBoot+MybatisPlus集成","level":"1.2.1","depth":2,"path":"java/SpringBoot+MybatisPlus集成.md","ref":"java/SpringBoot+MybatisPlus集成.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"java/websocket.md","mtime":"2021-03-29T02:29:52.129Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-29T02:45:20.216Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
